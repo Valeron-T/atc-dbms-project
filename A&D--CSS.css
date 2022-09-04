@@ -1,0 +1,86 @@
+#t-t
+{
+	margin: 10% 25%;
+}
+
+#t-t table
+{
+	background-color: black;
+	/*color: white;*/
+	font-family: helvetica, sans-serif;
+}
+
+#t-t table, tr,td
+{
+	/*border: 1px solid black;*/
+	border-collapse: collapse;
+	padding: 5px 20px;
+	/*text-align: center;*/
+}
+
+/*---------------below properties are used for text colors-------------*/
+.t-t-txt-white
+{
+	color: white;
+}
+
+.t-t-txt-yellow
+{
+	color: yellow;
+}
+
+.t-t-txt-moccasin
+{
+	color: moccasin;
+}
+
+.t-t-txt-springgreen
+{
+	color: springgreen;
+}
+
+.t-t-txt-greenyellow
+{
+	color: greenyellow;
+}
+/*---------------below properties are used for colors-------------*/
+
+
+.t-t-border-right
+{
+	border-right: 1px solid white;
+}
+.t-t-main-each-row-border-botton
+{
+	border-bottom: 1px solid white;
+}
+
+.t-t-txt-uppercase
+{
+	text-transform: uppercase;
+}
+
+.t-t-txt-bold
+{
+	font-weight: bold;
+}
+
+.t-t-font-size-smaller
+{
+	font-size: 70%;
+}
+
+.t-t-align-right
+{
+	text-align: right;
+}
+
+.t-t-align-center
+{
+	text-align: center;
+}
+
+/*.t-t-margin-bottom
+{
+	margin-bottom: 0;
+}*/
