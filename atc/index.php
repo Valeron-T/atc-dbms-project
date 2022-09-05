@@ -12,20 +12,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  // // Select airports
-  // $airports = "Select * from airport";
-  // $result = $conn->query($airports);
-
-  // if ($result->num_rows > 0) {
-  //   // output data of each row
-  //   while($row = $result->fetch_assoc()) {
-  //     echo "IATA Code: " . $row["iata_code"]. " , Name: " . $row["name"]. ", Country: " . $row["iso_country"]. "<br>";
-  //   }
-  // } else {
-  //   echo "0 results";
-  // }
-
-  echo "Connected successfully";
+  // echo "Connected successfully";
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +31,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="container" id="t-t-main-area">
+		<div class="container-fluid" id="t-t-main-area">
 			<div class="row t-t-border-bottom">
 				<h3 class="text-center t-t-color-white" id="t-t-main-text">Flight Schedule</h3>
 			</div>
@@ -73,15 +60,15 @@
                     <div class='col p-1 text-uppercase fw-bold t-t-color-moccasin'>$time</div>
                     <div class='col p-1 text-uppercase fw-bold t-t-color-springgreen'>".$row['status']."</div>
                     <div class='col p-1 text-uppercase fw-bold t-t-color-greenyellow'>".$row['aircraft_type']."</div>
-                    <div class='col p-1 text-uppercase'></div>
+                    <div class='col p-1 text-uppercase fw-bold t-t-color-white'>
+                      <img class='airline-logo' src='https://daisycon.io/images/airline/?width=100&height=50&color=191919&iata=".$row['airline_code']."'></img>
+                    </div>
                   </div>
                   <div class='row'>
                     <div class='col p-1 text-uppercase t-t-font-size-smaller t-t-color-yellow'>From</div>
                     <div class='col p-1 text-uppercase'></div>
                     <div class='col p-1 text-uppercase  fw-bold t-t-color-white'>".$row['airline_code']." ".$row['flight_no']."</div>
-                    <div class='col p-1 text-uppercase fw-bold t-t-color-white'>
-                      <img class='airline-logo' src='https://daisycon.io/images/airline/?width=100&height=50&color=000000&iata=".$row['airline_code']."'></img>
-                    </div>
+                    <div class='col p-1 text-uppercase'></div>
                   </div>
                   <div class='row'>
                     <div class='col p-1 text-uppercase t-t-font-size-smaller t-t-color-yellow'>".$row['origin']."</div>
@@ -121,7 +108,7 @@
                     <div class='col p-1 text-uppercase fw-bold t-t-color-springgreen'>".$row['status']."</div>
                     <div class='col p-1 text-uppercase fw-bold t-t-color-greenyellow'>".$row['aircraft_type']."</div>
                     <div class='col p-1 text-uppercase fw-bold t-t-color-white'>
-                      <img class='airline-logo' src='https://daisycon.io/images/airline/?width=100&height=50&color=000000&iata=".$row['airline_code']."'></img>
+                      <img class='airline-logo' src='https://daisycon.io/images/airline/?width=100&height=50&color=191919&iata=".$row['airline_code']."'></img>
                     </div>
                   </div>
                   <div class='row'>
