@@ -1,19 +1,84 @@
 #body-of-pilot-ui
 {
-	background-color: black;
-}
-#ckpit-border
-{
-	/*border: 3px solid white;*/
-	background-color: white;
+	/*background-color: #FFF5EE;*/
+	background-image: url(i5.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-#ckpit-l-window
+#pilot-heading
 {
-	background-image: url('');
+	color: #36013F;
+}
+#green-message
+{
+	background-color: darkgreen;
+	color: white;
 }
 
-#ckpit-r-window
+#red-message
 {
-	background-image: url('');
+	background-color: red;
+	color: white;
 }
+
+/*----------------BELOW----------------REST-ALL-BUTTONS--------------------------------*/
+.bg-color-dark-slate
+{
+	background-color: #2B3856;
+}
+.bg-color-dark-slate:hover
+{
+	border: 2px dashed #FFC0CB;
+}
+.txt-color-light-purple-blue
+{
+	color: #ffbb00;
+}
+.box-shadow-all-buttons
+{
+	box-shadow: 10px 10px 10px black;
+}
+/*----------------ABOVE----------------REST-ALL-BUTTONS--------------------------------*/
+
+
+
+/*----------------BELOW----------------SUBMIT------BUTTON--------------------------------*/
+#pilot-submit-btn
+{
+	color: #F8F8FF;
+}
+#pilot-submit-btn:hover
+{
+	color: #FFDF00;/*golden ywllow*/
+	border: 2px solid #FFDF00; /*golden ywllow*/
+}
+.bg-color-dark-green
+{
+	background-color: #006400;
+}
+.bg-color-parrot-green
+{
+	background-color: #12AD2B;
+}
+/*----------------ABOVE----------------SUBMIT------BUTTON--------------------------------*/
+
+/*----------------BELOW----------------RESET------BUTTON--------------------------------*/
+#pilot-reset-btn
+{
+	color: #F8F8FF;
+}
+#pilot-reset-btn:hover
+{
+	color: #FFDF00;/*golden ywllow*/
+	border: 2px solid #FFDF00; /*golden ywllow*/
+}
+.bg-color-black-bean
+{
+	background-color: #3D0C02;
+}
+.bg-color-crimson-red
+{
+	background-color: #990000;
+}
+/*----------------ABOVE----------------RESET------BUTTON--------------------------------*/

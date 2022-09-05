@@ -30,12 +30,40 @@
                     if ($_POST['origin'] === 'BOM') {
                         $sql = "INSERT INTO `flights` (`airline_code`, `flight_no`, `time`, `deparr`, `origin`, `destination`, `gate`, `aircraft_type`, `status`) VALUES ('".$_POST['flight-no-selected']."', '".$_POST['flight_no']."', '".$_POST['time']."', '".$_POST['deparr']."', '".$_POST['origin']."', '".$_POST['destination']."', '".$_POST['gate']."', '".$_POST['aircraft_type']."','Scheduled');";
                         if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
+                            $success = "New record created successfully";
+                            echo "<div class='container-fluid id='message-area'>
+                                <div class='container pt-4'>
+                                    <div class='row' id='green-message'>
+                                        <div class='container'>
+                                            <div class='col'>
+                                                <p class='m-0 text-center text-uppercase fw-bold'>
+                                                    $success
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
                         } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                         }
                     } else {
-                        echo "Origin must be BOM for departures";
+                        $error_msg = "Origin must be BOM for departures";
+                        echo "<div class='container-fluid id='message-area'>
+                                <div class='container pt-4'>
+                                    <div class='row' id='red-message'>
+                                        <div class='container'>
+                                            <div class='col'>
+                                                <p class='m-0 text-center text-uppercase fw-bold'>
+                                                    $error_msg
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
                     }
                 }
                 elseif ($_POST['deparr'] === 'ARR') {
@@ -43,19 +71,60 @@
                     if ($_POST['destination'] === 'BOM') {
                         $sql = "INSERT INTO `flights` (`airline_code`, `flight_no`, `time`, `deparr`, `origin`, `destination`, `gate`, `aircraft_type`, `status`) VALUES ('".$_POST['flight-no-selected']."', '".$_POST['flight_no']."', '".$_POST['time']."', '".$_POST['deparr']."', '".$_POST['origin']."', '".$_POST['destination']."', '".$_POST['gate']."', '".$_POST['aircraft_type']."','Expected');";
                         if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
+                            $success = "New record created successfully";
+                            echo "<div class='container-fluid id='message-area'>
+                                <div class='container pt-4'>
+                                    <div class='row' id='green-message'>
+                                        <div class='container'>
+                                            <div class='col'>
+                                                <p class='m-0 text-center text-uppercase fw-bold'>
+                                                    $success
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
                         } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                         }
                     } else {
-                        echo "Destination must be BOM for arrivals";
+                        $error_msg = "Destination must be BOM for arrivals";
+                        echo "<div class='container-fluid id='message-area'>
+                                <div class='container pt-4'>
+                                    <div class='row' id='red-message'>
+                                        <div class='container'>
+                                            <div class='col'>
+                                                <p class='m-0 text-center text-uppercase fw-bold'>
+                                                    $error_msg
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ";
                     }
                 }
             } else {
-                echo "Origin and Destination cannot be same";
+                $error_msg = "Origin and Destination cannot be same";
+                echo "<div class='container-fluid id='message-area'>
+                        <div class='container pt-4'>
+                            <div class='row' id='red-message'>
+                                <div class='container'>
+                                    <div class='col'>
+                                        <p class='m-0 text-center text-uppercase fw-bold'>
+                                                $error_msg
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    ";
             }
         } else{
-            echo "Selected gate doesn't support aircraft type!<br>";
             // Display supported gates which are also vacant 
             $get_supported_gates = "SELECT stand_no from gates where aircraft_type like '%$ac_type%' and stand_status = 'Vacant'";
             $supported_gates_result = $conn->query($get_supported_gates);
@@ -66,11 +135,27 @@
                 while($row = $supported_gates_result->fetch_assoc()) {
                     $sup_gates = $sup_gates.$row['stand_no'].",";
                 }
-                echo "Choose any of these gates: ".$sup_gates;
+                $error_msg = "Choose any of these gates: ".$sup_gates;
             }
             else {
-                echo "No gates available for specified A/C type.<br>";
+                $error_msg = "No gates available for specified A/C type.<br>";
             }
+
+            echo "<div class='container-fluid id='message-area'>
+                    <div class='container pt-4'>
+                        <div class='row' id='red-message'>
+                            <div class='container'>
+                                <div class='col'>
+                                    <p class='m-0 text-center text-uppercase fw-bold'>
+                                        Selected gate doesn't support aircraft type!<br>
+                                        $error_msg
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                ";
         }
         
     }
@@ -132,6 +217,10 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="pilot.js"></script>
+	<!--This above script tag is used to load the offline jQuery -->
+
 	<link rel="stylesheet" type="text/css" href="pilot.css">
 
 	<title>Pilot UI</title>
@@ -145,12 +234,11 @@
 			<!--this ---below--- div is used for the making two windows-->
 			<div class="container-fluid">
 				<div class="row pt-5">
-					<div class="container p-4" id="ckpit-border">
+					<div class="container p-0" id="ckpit-border">
 						<div class="row">
-							<div class="col p-5 bg-primary" id="ckpit-l-window">
-								<!-- <img src="" alt="cockpit window" class="img-fluid float-start"> -->
+							<div class="col p-0 ">
+								<h3 class="text-uppercase text-center fw-bold fs-1 p-2" id="pilot-heading">PILOT</h3>
 							</div>
-							<div class="col p-5 bg-dark" id="ckpit-r-window"></div>
 						</div>
 					</div>
 				</div>
@@ -176,9 +264,9 @@
 
 
 						<!--the ---below--- div is for ---------Airline Code------>
-						<div class="col p-3 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Airline Code</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Airline Code</label>
 							</div>
 							<div class="container text-uppercase text-center">
                                 <select id='flight-no-selected' name="flight-no-selected" class="text-uppercase text-center form-control">
@@ -199,9 +287,9 @@
 
 
 						<!--the ---below--- div is for ---------Flight Number------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Flight Number</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Flight Number</label>
 							</div>
 							<div class="container text-uppercase text-center">
 								<input type="textbox" name="flight_no" id="flight_no" class="text-center form-control">
@@ -211,9 +299,9 @@
 
 
 						<!--the ---below--- div is for ---------Time------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Time</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Time</label>
 							</div>
 							<div class="container text-uppercase text-center">
 								<input type="datetime-local" name="time" id="time" class="text-center form-control">
@@ -223,9 +311,9 @@
 
 
 						<!--the ---below--- div is for ---------Gate------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Available Gates</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Gate</label>
 							</div>
 							<div class="container text-uppercase text-center">
 								<select id='gate' name="gate" class="text-uppercase text-center form-control">
@@ -263,9 +351,9 @@
 
 
 						<!--the ---below--- div is for ---------Origin------>
-						<div class="col p-3 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Origin</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Origin</label>
 							</div>
 							<div class="container text-uppercase text-center">
                                 <select id='origin' name="origin" class="text-uppercase text-center form-control">
@@ -286,9 +374,9 @@
 
 
 						<!--the ---below--- div is for ---------Destination------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">Destination</label>
+								<label class="text-uppercase txt-color-light-purple-blue">Destination</label>
 							</div>
 							<div class="container text-uppercase text-center">
                                 <select id='destination' name="destination" class="text-uppercase text-center form-control">
@@ -309,9 +397,9 @@
 
 
 						<!--the ---below--- div is for ---------Request------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold">
-								<label class="text-uppercase">A/C Type Code</label>
+								<label class="text-uppercase txt-color-light-purple-blue">A/C Type Code</label>
 							</div>
 							<div class="container text-uppercase text-center">
                                 <input type="text" name="aircraft_type" id="aircraft_type" class="text-center form-control">
@@ -321,15 +409,15 @@
 
 
 						<!--the ---below--- div is for ---------Departure and Arrival------>
-						<div class="col p-3 ms-2 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-slate  box-shadow-all-buttons">
 							<div class="container text-center fs-5 fw-bold  text-uppercase">
 								<!-- <label class="text-uppercase">Gate</label> -->
 								<input type="radio" name="deparr" value="DEP">
-								<label>Departure</label>
+								<label class="txt-color-light-purple-blue">Departure</label>
 							</div>
 							<div class="container text-uppercase text-center  fw-bold  fs-5">
 								<input type="radio" name="deparr" value="ARR">
-								<label>Arrival</label>
+								<label class="txt-color-light-purple-blue">Arrival</label>
 							</div>
 						</div>
 						<!--the ---above--- div is for ---------Departure and Arrival------>
@@ -342,16 +430,16 @@
 
 
 					<div class="row pt-3">
-						<div class="col p-3 bg-primary">
+						<div class="col p-3 ms-4 bg-color-dark-green rounded">
 							<div class="container text-center fs-5 fw-bold  text-uppercase">
 								<!-- <input type="submit" name="submit_button" value="SUBMIT TO ATC" class="form-control text-center fs-5 fw-bold  text-uppercase"> -->
-                                <input type="submit" name="flt_submit_btn" class="button form-control text-center fs-5 fw-bold text-uppercase" value="Submit Flight Details" />
+                                <input type="submit" name="flt_submit_btn" class="form-control text-center fs-5 fw-bold  text-uppercase bg-color-parrot-green" value="Submit Flight Details" id="pilot-submit-btn"/>
 							</div>
 						</div>
 
-						<div class="col p-3  ms-2 bg-primary">
+						<div class="col p-3  ms-4 bg-color-black-bean">
 							<div class="container text-center fs-5 fw-bold  text-uppercase">
-								<input type="submit" name="reset_button" value="RESET" class="form-control text-center fs-5 fw-bold  text-uppercase">
+								<input type="submit" name="reset_button" value="RESET" class="form-control text-center fs-5 fw-bold  text-uppercase bg-color-crimson-red" id="pilot-reset-btn">
 							</div>
 						</div>
 					</div>
