@@ -1,0 +1,19 @@
+#body-of-pilot-ui
+{
+	background-color: black;
+}
+#ckpit-border
+{
+	/*border: 3px solid white;*/
+	background-color: white;
+}
+
+#ckpit-l-window
+{
+	background-image: url('');
+}
+
+#ckpit-r-window
+{
+	background-image: url('');
+}
