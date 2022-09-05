@@ -2,18 +2,15 @@
 {
 	background-color: black;
 }
-#ckpit-border
+
+#green-message
 {
-	/*border: 3px solid white;*/
-	background-color: white;
+	background-color: darkgreen;
+	color: white;
 }
 
-#ckpit-l-window
+#red-message
 {
-	background-image: url('');
-}
-
-#ckpit-r-window
-{
-	background-image: url('');
+	background-color: red;
+	color: white;
 }
