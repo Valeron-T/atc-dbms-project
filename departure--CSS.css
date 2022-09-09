@@ -1,0 +1,37 @@
+.test-border
+{
+	border: 2px solid black;
+}
+
+.bg-color-golden-silk
+{
+	background-color: #F3E3C3;
+}
+
+.style1
+{
+	background-color: #660000;
+	color: white;
+}
+
+.style3
+{
+	background-color: #52595D;
+	color: white;
+}
+.style4
+{
+	background-color: #98AFC7;
+	color: white;
+}
+
+.style5
+{
+	background-color: #C58917;
+	color: white;
+}
+.style6
+{
+	background-color: #F6BE00;
+	color: white;
+}
