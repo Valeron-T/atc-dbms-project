@@ -1,0 +1,42 @@
+.test-border
+{
+	border: 2px solid black;
+}
+
+.border-of-row
+{
+	border: 7px solid  #800517;
+}
+
+.bg-color-day-sky-blue
+{
+	background-color: #E0FFFF;
+}
+
+.style1
+{
+	background-color: #36013F;
+	color: #FCDFFF;
+}
+
+.style3
+{
+	background-color: #C48189;
+	color: white;
+}
+.style4
+{
+	background-color: #800517;
+	color: white;
+}
+
+.style5
+{
+	background-color: #728FCE;
+	color: white;
+}
+.style6
+{
+	background-color: #342D7E;
+	color: white;
+}
