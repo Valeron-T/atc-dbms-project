@@ -1,0 +1,64 @@
+.txt-decoration-none
+{
+	text-decoration: none;
+}
+
+.max-width-img
+{
+	max-width: 100px;
+}
+
+.bg-color
+{
+	background-color: lightgrey;
+}
+
+
+.bg-color-deep-yellow
+{
+	background-color: #FBB117;
+}
+
+#depart_btn:hover
+{
+	border: 8px solid white;
+}
+#arrival_btn:hover
+{
+	border: 8px solid white;
+}
+#ground_btn:hover
+{
+	border: 8px solid white;
+}
+
+
+.txt-black
+{
+	color: black;
+}
+
+.bg-color-form
+{
+	background-color: #FFF8DC;
+}
+
+.bg-color-form-drop
+{
+	background-color: #151B54;
+	border-radius: 15px;
+}
+.border-of-drop
+{
+	border-radius: 10px;
+}
+.txt-white
+{
+	color: white;
+}
+
+.btns_5:hover
+{
+	background-color: #ffaf90;
+	box-shadow: 10px 10px 10px 5px brown;
+}

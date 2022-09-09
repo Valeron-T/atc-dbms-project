@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="new-atc--CSS.css">
+
+	<title>ATC</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+
+			<!-- This below div is used for 3 nav buttons -->
+			<div class="col-2 p-5 bg-color">
+
+				<div class="row mt-2 pt-3 bg-color-deep-yellow" id="ground_btn">
+					<a href="ground.html" class="txt-decoration-none container" target="open-area">
+						<figure class="container text-center">
+							<img src="https://cdn-icons-png.flaticon.com/512/0/614.png" alt="Landing Icon" class="img-thumbnail" style="width: 70px;">
+							<figcaption>
+								<p class="mb-0 text-center fw-bold fs-6 text-uppercase text-nowrap txt-black">Ground</p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+
+				<div class="row mt-2 pt-3 bg-color-deep-yellow" id="depart_btn">
+					<a href="departure.html" class="txt-decoration-none container" target="open-area">
+						<figure class="container text-center">
+							<img src="https://cdn-icons-png.flaticon.com/512/68/68380.png" alt="Landing Icon" class="img-thumbnail" style="width: 70px;">
+							<figcaption>
+								<p class="mb-0 text-center fw-bold fs-6 text-uppercase text-nowrap txt-black">Departures</p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+
+				<div class="row mt-2 pt-3 bg-color-deep-yellow" id="arrival_btn">
+					<a href="arrivals.html" class="txt-decoration-none container" target="open-area">
+						<figure class="container text-center">
+							<img src="https://cdn-icons-png.flaticon.com/512/68/68542.png" alt="Landing Icon" class="img-thumbnail" style="width: 70px;">
+							<figcaption>
+								<p class="text-center fw-bold fs-6 text-uppercase text-nowrap txt-black">Arrivals</p>
+							</figcaption>
+						</figure>
+					</a>
+				</div>
+
+
+			</div>
+			<!-- This above div is used for 3 nav buttons -->
+
+
+			<!-- This below div tah is used for iframe -->
+			<div class="col p-2 bg-color">
+				<div class="">
+					<iframe src="ground.html" class="" style="width: 100%; height: 500px; border:none;" name="open-area">
+						
+					</iframe>
+				</div>
+			</div>
+			<!-- This above div tah is used for iframe -->
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- the below div is the form tags in the footer area -->
+		<div class="container-fluid mt-1 bg-color-form">
+			<div class="container-fluid p-3">
+
+				<form>
+
+					<div class="row">
+
+
+
+
+
+
+
+
+						<!-- The below div tag is used for the two drop downs -->
+						<div class="col-2 p-2 mt-2">
+
+							<!-- The below div -- row -- is used for ---Flight Number -->
+							<div class="row p-3 my-2 border bg-color-form-drop">
+								<div class="container text-center fs-6 fw-bold">
+									<label class="text-uppercase txt-white" for="flight_number">Flight Number</label>
+								</div>
+								<div class="container text-uppercase text-center">
+									<input list="flight_number" name="flight_number" class="text-uppercase text-center form-control border-of-drop">
+									<datalist id="flight_number">
+										<option value="AI206"></option>
+										<option value="EM266"></option>
+										<option value="BA236"></option>
+										<option value="LT966"></option>
+									</datalist>
+								</div>
+							</div>
+							<!-- The above div -- row -- is used for ---Flight Number -->
+
+
+
+							<!-- The below div -- row -- is used for ---ATC category -->
+							<div class="row p-3 my-2 border bg-color-form-drop">
+								<div class="container text-center fs-6 fw-bold">
+									<label class="text-uppercase border-of-drop txt-white" for="atc_category">ATC Category</label>
+								</div>
+								<div class="container text-uppercase text-center">
+									<input list="atc_category" name="atc_category" class="text-uppercase text-center form-control border-of-drop">
+									<datalist id="atc_category">
+										<option value="Ground"></option>
+										<option value="Departures"></option>
+										<option value="Arrivals"></option>
+									</datalist>
+								</div>
+							</div>
+							<!-- The above div -- row -- is used for ---ATC Category -->
+						</div>
+						<!-- The above div tag is used for the two drop downs -->
+
+
+
+
+
+
+
+
+
+
+
+
+						<!-- The below div tag is used for the 5icons downs -->
+						<div class="col p-0">
+							<div class="row justify-content-center">
+
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-lg btns_5">
+												<figure>
+													<img src="https://cdn1.vectorstock.com/i/thumb-large/89/10/tower-station-with-dishes-internet-or-phone-vector-30488910.jpg" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">PDC</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-sm btns_5">
+												<figure>
+													<img src="https://media.istockphoto.com/vectors/the-aircraft-tractor-is-towing-the-aircraftpreparing-for-drawing-vector-id1250137989?k=20&m=1250137989&s=612x612&w=0&h=PK51jjXn-OrKYZvqmSiq3emxXz5nOmcK4t9HaUUwarM=" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">PushBack</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-sm btns_5">
+												<figure>
+													<img src="https://media.gettyimages.com/vectors/airplane-isometric-icon-vector-id620710880?k=20&m=620710880&s=612x612&w=0&h=L8BVpRnMyckCohZ0qvO4ErqDivKRBV76-2CTp0k1iXM=" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">Taxi</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-sm btns_5">
+												<figure>
+													<img src="https://media.gettyimages.com/vectors/airplane-landing-vector-id165813488?s=2048x2048" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">Landing</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-sm btns_5">
+												<figure>
+													<img src="https://img.freepik.com/premium-vector/plane-blue-sky-with-vapor-trail-illustration_567746-2595.jpg?w=150" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">TakeOff</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="col p-3">
+									<div class="container p-3">
+										<div class="row justify-content-center">
+											<button class="container btn text-nowrap btn-lg btns_5">
+												<figure>
+													<img src="https://png.pngtree.com/png-vector/20191121/ourlarge/pngtree-clipart-of-pilot-with-the-headset-and-controlling-the-airplane-png-image_2013691.jpg" alt="PushBack Icon" class="img-thumbnail max-width-img">
+													<figcaption>
+														<h6 class="mt-3 text-uppercase">HandOff</h6>
+													</figcaption>
+												</figure>
+											</button>
+										</div>
+									</div>
+								</div>
+
+
+								
+							</div>
+						</div>
+						<!-- The above div tag is used for the 5icons downs -->
+
+
+
+
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<!-- the above div is the form tags of footer area -->
+
+
+	</div>
+</body>
+</html>
